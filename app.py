@@ -32,7 +32,7 @@ class Editor(W.QMainWindow):
         self.selected_source=-1;self.hidden_sources=set();self.hidden_markers=set();self.hidden_slots=set();self.raw_visible=[];self.curve_slot_override=None;self.preview_item=None;self.curve_key=None;self.view_revision=0;self._curve_background=None;self._curve_background_view=None
         self.time_view=None;self.span_selector=None;self.press=None;self.dragging=False;self.shift_down=False;self.drag_pointer=None;self.edge_direction=0;self.edge_strength=0;self.view_zoom=1.05
         self.selection_active=True
-        self.setWindowTitle('C3D 点位编辑器');self.resize(1500,1000)
+        self.setWindowTitle('三维动作捕捉标记点智能校准软件');self.resize(1500,1000)
         root=W.QWidget();self.setCentralWidget(root);layout=W.QVBoxLayout(root)
         toolbar=self.addToolBar('常用');toolbar.setMovable(False)
         self.info=W.QLabel('选点 → 选区 → 处理');self.info.setMaximumWidth(450);self.info.setMinimumWidth(0);self.statusBar().addPermanentWidget(self.info)
@@ -382,7 +382,7 @@ class Editor(W.QMainWindow):
         name=Path(self.project_path).name if self.project_path else '尚未保存项目'
         count=len(self.s.assignments) if self.s else 0
         slots=len({a['slot'] for a in self.s.assignments}) if self.s else 0
-        self.setWindowTitle(f"C3D 标记点编辑器 · {name}{' *' if dirty else ''} · 已配对 {slots} 点 / {count} 片段 / {len(self.s.identity_edits) if self.s else 0} 次编号修正 / {len(self.s.repairs) if self.s else 0} 次整段修复")
+        self.setWindowTitle(f"三维动作捕捉标记点智能校准软件 · {name}{' *' if dirty else ''} · 已配对 {slots} 点 / {count} 片段 / {len(self.s.identity_edits) if self.s else 0} 次编号修正 / {len(self.s.repairs) if self.s else 0} 次整段修复")
         if hasattr(self,'update_menu_state'):self.update_menu_state()
     def write_recovery(self):
         state=self.s.snapshot()

@@ -20,7 +20,7 @@ class WindowsPackagingTests(unittest.TestCase):
     def test_frozen_windows_settings_are_stored_outside_resources(self):
         with tempfile.TemporaryDirectory() as folder:
             with patch.object(sys,'frozen',True,create=True),patch.object(sys,'platform','win32'),patch.dict('os.environ',{'LOCALAPPDATA':folder}):
-                self.assertEqual(data_dir(),Path(folder)/'C3DMarkerEditor');self.assertTrue(data_dir().is_dir())
+                self.assertEqual(data_dir(),Path(folder)/'三维动作捕捉标记点智能校准软件');self.assertTrue(data_dir().is_dir())
 
     def test_project_moved_between_operating_systems_resolves_colocated_source(self):
         import ezc3d,numpy as np

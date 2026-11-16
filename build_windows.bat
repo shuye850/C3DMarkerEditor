@@ -31,7 +31,7 @@ if errorlevel 1 goto failed
 "%BUILD_PY%" build_windows.py
 if errorlevel 1 goto failed
 echo.
-echo Ready: dist\C3DMarkerEditor-Windows-x64.zip
+echo Ready: dist\三维动作捕捉标记点智能校准软件-Windows-x64.zip
 echo Send this ZIP to Windows users. They do not need Python.
 pause
 exit /b 0

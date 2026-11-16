@@ -7,4 +7,4 @@ def data_dir():
     if sys.platform=='win32':base=Path(os.environ.get('LOCALAPPDATA') or Path.home()/'AppData'/'Local')
     elif sys.platform=='darwin':base=Path.home()/'Library'/'Application Support'
     else:base=Path(os.environ.get('XDG_DATA_HOME') or Path.home()/'.local'/'share')
-    folder=base/'C3DMarkerEditor';folder.mkdir(parents=True,exist_ok=True);return folder
+    folder=base/'三维动作捕捉标记点智能校准软件';folder.mkdir(parents=True,exist_ok=True);return folder

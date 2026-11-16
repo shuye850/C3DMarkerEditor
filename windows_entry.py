@@ -55,7 +55,7 @@ def main():
         if testing and report:report.write_text(json.dumps({'ok':False,'error':detail},ensure_ascii=False),encoding='utf-8')
         if sys.platform=='win32' and not testing:
             import ctypes
-            ctypes.windll.user32.MessageBoxW(None,f'程序启动失败，详细信息已保存至：\n{log}','C3D 标记点编辑器',0x10)
+            ctypes.windll.user32.MessageBoxW(None,f'程序启动失败，详细信息已保存至：\n{log}','三维动作捕捉标记点智能校准软件',0x10)
         elif sys.stderr:sys.stderr.write(detail)
         return 1
 
